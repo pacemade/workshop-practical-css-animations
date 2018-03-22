@@ -17,18 +17,41 @@
 
 
 /* Components */
-.ax-El {
+.ax-El,
+.ax-List > * {
   transition-property: all;
   transition-delay: var(--ax-delay);
   transition-duration: calc(var(--ax-duration) * 1ms);
   transition-timing-function: var(--ax-timingFunction);
 }
+
 /* Components */
 
 
 
 /* Sequences */
-.ax-El.ax-fade {
-  
+.ax-El.ax-fade,
+.ax-List.ax-fade > * {
+  opacity: 0;
 }
+.ax-El.ax-fade.active,
+.ax-List.ax-fade.active > * {
+  opacity: 1;
+}
+.ax-El.ax-up {
+  transform: translateY(10%);
+}
+.ax-El.ax-up.active {
+  transform: translateY(0);
+}
+
+/* upscale will overwrite the ax-up */
+
+.ax-El.ax-upscale {
+  transform: scale(0.8) translateY(10%) rotate(30deg);
+}
+.ax-El.ax-upscale.active {
+  transform: scale(1) translateY(0) rotate(0deg);
+}
+
 /* Sequences */
