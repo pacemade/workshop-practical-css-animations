@@ -14,13 +14,19 @@
 }
 /* Settings */
 
+.ax-stagger {
 
+}
 
+/* anything that has a child of anyhing, the first one */
+* > *:nth-child(1) {
+  --nIndex: 0;
+}
 /* Components */
 .ax-El,
 .ax-List > * {
   transition-property: all;
-  transition-delay: var(--ax-delay);
+  transition-delay: calc(var(--ax-delay) * 1ms);
   transition-duration: calc(var(--ax-duration) * 1ms);
   transition-timing-function: var(--ax-timingFunction);
 }
@@ -34,14 +40,18 @@
 .ax-List.ax-fade > * {
   opacity: 0;
 }
+
 .ax-El.ax-fade.active,
 .ax-List.ax-fade.active > * {
   opacity: 1;
 }
-.ax-El.ax-up {
-  transform: translateY(10%);
+
+.ax-El.ax-up,
+.ax-List.ax-up > * {
+  transform: translateY(20%);
 }
-.ax-El.ax-up.active {
+.ax-El.ax-up.active,
+.ax-List.ax-up.active > * {
   transform: translateY(0);
 }
 
@@ -50,6 +60,7 @@
 .ax-El.ax-upscale {
   transform: scale(0.8) translateY(10%) rotate(30deg);
 }
+
 .ax-El.ax-upscale.active {
   transform: scale(1) translateY(0) rotate(0deg);
 }
