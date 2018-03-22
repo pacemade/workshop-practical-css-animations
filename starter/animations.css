@@ -11,17 +11,11 @@
   --ax-delay: 0;
   --ax-duration: 300;
   --ax-timingFunction: ease;
+  --ax-staggerDelay: 200;
 }
 /* Settings */
 
-.ax-stagger {
 
-}
-
-/* anything that has a child of anyhing, the first one */
-* > *:nth-child(1) {
-  --nIndex: 0;
-}
 /* Components */
 .ax-El,
 .ax-List > * {
@@ -29,6 +23,35 @@
   transition-delay: calc(var(--ax-delay) * 1ms);
   transition-duration: calc(var(--ax-duration) * 1ms);
   transition-timing-function: var(--ax-timingFunction);
+}
+
+.ax-stagger > * {
+  transition-delay: calc(var(--ax-staggerDelay) * var(--nIndex) * 1ms);
+}
+
+/* anything that has a child of anyhing, the first one */
+/* acts like an index variable */
+* > *:nth-child(1) {
+  --nIndex: 0;
+}
+* > *:nth-child(2) {
+  --nIndex: 1;
+}
+* > *:nth-child(3) {
+  --nIndex: 2;
+}
+* > *:nth-child(4) {
+  --nIndex: 3;
+}
+* > *:nth-child(5) {
+  --nIndex: 4;
+}
+* > *:nth-child(n+6) {
+  --nIndex: 5;
+}
+
+*:(.active) > * {
+  --nIndex: 0;
 }
 
 /* Components */
