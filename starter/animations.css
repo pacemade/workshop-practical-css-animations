@@ -8,6 +8,9 @@
 
 /* Settings */
 :root {
+  --ax-delay: 0;
+  --ax-duration: 300;
+  --ax-timingFunction: ease;
 }
 /* Settings */
 
@@ -15,10 +18,17 @@
 
 /* Components */
 .ax-El {
+  transition-property: all;
+  transition-delay: var(--ax-delay);
+  transition-duration: calc(var(--ax-duration) * 1ms);
+  transition-timing-function: var(--ax-timingFunction);
 }
 /* Components */
 
 
 
 /* Sequences */
+.ax-El.ax-fade {
+  
+}
 /* Sequences */
