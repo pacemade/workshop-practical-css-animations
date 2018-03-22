@@ -23,6 +23,7 @@
   transition-delay: calc(var(--ax-delay) * 1ms);
   transition-duration: calc(var(--ax-duration) * 1ms);
   transition-timing-function: var(--ax-timingFunction);
+  will-change: opacity;
 }
 
 .ax-stagger > * {
